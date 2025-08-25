@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Bewerbungsseite</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Hamburger-Menü Button -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Seitliches Navigationsmenü -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Navigation</h2>
+            <!-- Dark/Light Mode Toggle -->
+            <div class="theme-toggle">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider">
+                        <span class="toggle-text dark">🌙</span>
+                        <span class="toggle-text light">☀️</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Startseite</a></li>
+            <li><a href="pages/ueber-mich.html" class="nav-link">Über mich</a></li>
+            <li><a href="pages/lebenslauf.html" class="nav-link">Lebenslauf</a></li>
+            <li><a href="pages/portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="pages/kontakt.html" class="nav-link">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay für das Menü -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hauptinhalt -->
+    <main class="main-content">
+        <header class="hero-section">
+            <!-- Tageszeit-abhängige Begrüßung -->
+            <h1 id="greeting">Willkommen auf meiner Bewerbungsseite</h1>
+            <p class="subtitle">Hier erfahren Sie alles über meine Qualifikationen und Erfahrungen</p>
+        </header>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>Herzlich Willkommen!</h2>
+                <p>
+                    Schön, dass Sie meine Bewerbungsseite besuchen. Hier finden Sie alle wichtigen 
+                    Informationen über meine beruflichen Qualifikationen, Erfahrungen und Projekte.
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Über mich</h3>
+                        <p>Erfahren Sie mehr über meinen Werdegang und meine Motivation.</p>
+                        <a href="pages/ueber-mich.html" class="btn">Mehr erfahren</a>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Lebenslauf</h3>
+                        <p>Mein detaillierter beruflicher Werdegang und meine Qualifikationen.</p>
+                        <a href="pages/lebenslauf.html" class="btn">Lebenslauf ansehen</a>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Portfolio</h3>
+                        <p>Beispiele meiner Arbeit und abgeschlossene Projekte.</p>
+                        <a href="pages/portfolio.html" class="btn">Portfolio durchstöbern</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer mit Impressum und Datenschutz -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="pages/impressum.html">Impressum</a>
+                <a href="pages/datenschutz.html">Datenschutz</a>
+            </div>
+            <p>&copy; 2025 Meine Bewerbungsseite. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

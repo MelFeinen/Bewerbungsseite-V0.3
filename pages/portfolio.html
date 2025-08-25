@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Meine Bewerbungsseite</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Hamburger-Menü Button -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Seitliches Navigationsmenü -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Navigation</h2>
+            <!-- Dark/Light Mode Toggle -->
+            <div class="theme-toggle">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider">
+                        <span class="toggle-text dark">🌙</span>
+                        <span class="toggle-text light">☀️</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="../index.html" class="nav-link">Startseite</a></li>
+            <li><a href="ueber-mich.html" class="nav-link">Über mich</a></li>
+            <li><a href="lebenslauf.html" class="nav-link">Lebenslauf</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay für das Menü -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hauptinhalt -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="container">
+                <h1>Portfolio</h1>
+                <p class="page-subtitle">Eine Auswahl meiner besten Projekte und Arbeiten</p>
+            </div>
+        </header>
+
+        <!-- Filter-Navigation -->
+        <section class="portfolio-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Alle Projekte</button>
+                    <button class="filter-btn" data-filter="web">Webentwicklung</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                    <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- Portfolio-Grid -->
+                <div class="portfolio-grid">
+                    <!-- Projekt 1 -->
+                    <div class="portfolio-item" data-category="web portfolio">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <div class="placeholder-image">
+                                    <span class="image-icon">💼</span>
+                                    <span class="image-text">Bewerbungsseite</span>
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-actions">
+                                        <button class="action-btn" onclick="openProjectModal('bewerbungsseite')">Details</button>
+                                        <a href="index.html" class="action-btn">Live Demo</a>
+                                        <a href="#" class="action-btn" target="_blank">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>Interaktive Bewerbungsseite</h3>
+                                <p class="project-description">
+                                    Moderne, responsive Bewerbungswebsite mit Hamburger-Navigation, 
+                                    Dark/Light Mode, interaktiven Filtern für den Lebenslauf, Kontaktformular mit Live-Validierung 
+                                    und DSGVO-konformen Datenschutzbestimmungen.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Responsive Design</span>
+                                    <span class="tech-tag">CSS Variables</span>
+                                    <span class="tech-tag">Local Storage</span>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-date">2025</span>
+                                    <span class="project-type">Bewerbungsprojekt</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Keine Ergebnisse Meldung -->
+                <div class="no-results" style="display: none;">
+                    <h3>Keine Projekte gefunden</h3>
+                    <p>Für den ausgewählten Filter wurden keine Projekte gefunden.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="portfolio-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Haben Sie ein Projekt im Sinn?</h2>
+                    <p>
+                        Lassen Sie uns gemeinsam Ihre Ideen in die Realität umsetzen. 
+                        Kontaktieren Sie mich für eine unverbindliche Beratung.
+                    </p>
+                    <a href="kontakt.html" class="cta-btn">Jetzt Kontakt aufnehmen</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Projekt Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Projektdetails</h2>
+                <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Wird dynamisch mit JavaScript gefüllt -->
+            </div>
+        </div>
+        <div class="modal-backdrop" onclick="closeProjectModal()"></div>
+    </div>
+
+    <!-- Footer mit Impressum und Datenschutz -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+            <p>&copy; 2025 Meine Bewerbungsseite. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/portfolio.js"></script>
+</body>
+</html>

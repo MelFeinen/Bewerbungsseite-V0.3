@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Meine Bewerbungsseite</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/contact-styles.css">
+</head>
+<body>
+    <!-- Hamburger-Menü Button -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Seitliches Navigationsmenü -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Navigation</h2>
+            <!-- Dark/Light Mode Toggle -->
+            <div class="theme-toggle">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider">
+                        <span class="toggle-text dark">🌙</span>
+                        <span class="toggle-text light">☀️</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="../index.html" class="nav-link">Startseite</a></li>
+            <li><a href="ueber-mich.html" class="nav-link">Über mich</a></li>
+            <li><a href="lebenslauf.html" class="nav-link">Lebenslauf</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay für das Menü -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hauptinhalt -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="container">
+                <h1>Kontakt</h1>
+                <p class="page-subtitle">Nehmen Sie gerne Kontakt mit mir auf</p>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Kontaktformular -->
+                    <div class="contact-form-container">
+                        <h2>Schreiben Sie mir eine Nachricht</h2>
+                        <p class="form-description">
+                            Haben Sie Fragen oder möchten Sie mit mir in Kontakt treten? 
+                            Füllen Sie einfach das Formular aus - ich melde mich schnellstmöglich bei Ihnen zurück.
+                        </p>
+
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <!-- Name-Feld -->
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required 
+                                    autocomplete="name"
+                                    placeholder="Ihr vollständiger Name"
+                                >
+                                <span class="error-message" id="name-error"></span>
+                                <span class="success-message" id="name-success">✓</span>
+                            </div>
+
+                            <!-- E-Mail-Feld -->
+                            <div class="form-group">
+                                <label for="email">E-Mail-Adresse *</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required 
+                                    autocomplete="email"
+                                    placeholder="ihre.email@beispiel.de"
+                                >
+                                <span class="error-message" id="email-error"></span>
+                                <span class="success-message" id="email-success">✓</span>
+                            </div>
+
+                            <!-- Telefon-Feld (optional) -->
+                            <div class="form-group">
+                                <label for="phone">Telefonnummer (optional)</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    autocomplete="tel"
+                                    placeholder="+49 123 456789"
+                                >
+                                <span class="error-message" id="phone-error"></span>
+                                <span class="success-message" id="phone-success">✓</span>
+                            </div>
+
+                            <!-- Betreff-Feld -->
+                            <div class="form-group">
+                                <label for="subject">Betreff *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Bitte wählen Sie einen Betreff</option>
+                                    <option value="Bewerbung">Bewerbung / Jobanfrage</option>
+                                    <option value="Projekt">Projektanfrage</option>
+                                    <option value="Zusammenarbeit">Zusammenarbeit</option>
+                                    <option value="Fragen">Allgemeine Fragen</option>
+                                    <option value="Sonstiges">Sonstiges</option>
+                                </select>
+                                <span class="error-message" id="subject-error"></span>
+                                <span class="success-message" id="subject-success">✓</span>
+                            </div>
+
+                            <!-- Nachricht-Feld -->
+                            <div class="form-group">
+                                <label for="message">Ihre Nachricht *</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    required 
+                                    rows="6" 
+                                    placeholder="Teilen Sie mir mit, wie ich Ihnen helfen kann..."
+                                    minlength="10"
+                                ></textarea>
+                                <span class="char-counter" id="message-counter">0 / 10 Zeichen (min.)</span>
+                                <span class="error-message" id="message-error"></span>
+                                <span class="success-message" id="message-success">✓</span>
+                            </div>
+
+                            <!-- Datenschutz-Checkbox -->
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="privacy" name="privacy" required>
+                                    <span class="checkmark"></span>
+                                    <br><br>Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> 
+                                    gelesen und stimme der Verarbeitung meiner Daten zu. *
+                                </label>
+                                <span class="error-message" id="privacy-error"></span>
+                            </div>
+
+                            <!-- Submit-Button -->
+                            <div class="form-group">
+                                <button type="submit" class="submit-btn" id="submit-btn">
+                                    <span class="btn-text">Nachricht senden</span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <span class="spinner"></span>
+                                        Wird gesendet...
+                                    </span>
+                                </button>
+                            </div>
+
+                            <!-- Formular-Status -->
+                            <div class="form-status" id="form-status"></div>
+                        </form>
+                    </div>
+
+                    <!-- Kontaktinformationen -->
+                    <div class="contact-info">
+                        <h2>Weitere Kontaktmöglichkeiten</h2>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-details">
+                                    <h3>E-Mail</h3>
+                                    <p>m.feinen@web.de</p>
+                                    <p class="contact-note">Ich antworte normalerweise innerhalb von 48 Stunden</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="contact-icon">📱</div>
+                                <div class="contact-details">
+                                    <h3>Telefon</h3>
+                                    <p>+49 162 1929986</p>
+                                    <p class="contact-note">Mo-Fr, 9:00-18:00 Uhr</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="contact-icon">🐙</div>
+                                <div class="contact-details">
+                                    <h3>GitHub</h3>
+                                    <p><a href="#" target="_blank">github.com/MelFeinen</a></p>
+                                    <p class="contact-note">Meine Projekte und Code-Beispiele</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-cta">
+                            <h3>Lassen Sie uns zusammenarbeiten!</h3>
+                            <p>
+                                Ich freue mich darauf, von Ihnen zu hören und gemeinsam 
+                                an spannenden Projekten zu arbeiten.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer mit Impressum und Datenschutz -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+            <p>&copy; 2025 Meine Bewerbungsseite. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/contact-form.js"></script>
+</body>
+</html>
